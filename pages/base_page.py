@@ -1,5 +1,6 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+#from selenium.webdriver.support.ui import Select
 
 
 class BasePage:
@@ -35,3 +36,20 @@ class BasePage:
     def get_text(self, locator):
         element = self.find(locator)
         return element.text     
+    
+    def is_enabled(self, locator):
+        element = self.find(locator)
+        return element.is_enabled()
+    
+    def wait_until_enabled(self, locator):
+        self.wait.until(lambda driver: self.find(locator).is_enabled())
+
+    def wait_until_disabled(self, locator):
+        self.wait.until(lambda driver: not self.find(locator).is_enabled())
+
+"""
+    def get_all_options(self, locator):
+        element = self.find(locator)
+        #select = Select(element)
+        return select.options
+"""
