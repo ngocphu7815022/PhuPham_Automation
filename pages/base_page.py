@@ -1,5 +1,6 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
 #from selenium.webdriver.support.ui import Select
 
 
@@ -26,7 +27,7 @@ class BasePage:
         try:
             self.find(locator)
             return True
-        except:
+        except TimeoutException:
             return False
         
     def is_selected(self, locator):

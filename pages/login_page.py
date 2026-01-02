@@ -1,10 +1,6 @@
 from pages.base_page import BasePage
 from selenium.webdriver.common.by import By
 
-username_input = (By.ID, "username")
-password_input = (By.ID, "password")
-login_button = (By.CSS_SELECTOR, "button[type='submit']")
-
 
 class LoginPage(BasePage):
     username_input = (By.ID,'username')
