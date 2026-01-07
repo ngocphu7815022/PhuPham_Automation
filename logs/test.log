@@ -1,0 +1,109 @@
+2026-01-07 22:31:05,053 | INFO | LoginPage | ===== START test_login_success =====
+2026-01-07 22:31:05,053 | INFO | LoginPage | Opening login page
+2026-01-07 22:31:05,053 | INFO | LoginPage | Open page: https://the-internet.herokuapp.com/login
+2026-01-07 22:31:08,635 | INFO | LoginPage | Logging in with username: tomsmith
+2026-01-07 22:31:08,636 | INFO | LoginPage | Type into element: ('id', 'username')
+2026-01-07 22:31:08,636 | INFO | LoginPage | Find element: ('id', 'username')
+2026-01-07 22:31:08,741 | INFO | LoginPage | Type into element: ('id', 'password')
+2026-01-07 22:31:08,741 | INFO | LoginPage | Find element: ('id', 'password')
+2026-01-07 22:31:08,775 | INFO | LoginPage | Click element: ('css selector', "button[type='submit']")
+2026-01-07 22:31:08,812 | INFO | LoginPage | Get text from element: ('id', 'flash')
+2026-01-07 22:31:08,812 | INFO | LoginPage | Find element: ('id', 'flash')
+2026-01-07 22:31:09,414 | INFO | LoginPage | ===== END test_login_success =====
+2026-01-07 22:32:10,271 | INFO | LoginPage | ===== START test_login_success =====
+2026-01-07 22:32:10,272 | INFO | LoginPage | Opening login page
+2026-01-07 22:32:10,272 | INFO | LoginPage | Open page: https://the-internet.herokuapp.com/login
+2026-01-07 22:32:11,329 | INFO | LoginPage | Logging in with username: tomsmith
+2026-01-07 22:32:11,330 | INFO | LoginPage | Type into element: ('id', 'username')
+2026-01-07 22:32:11,330 | INFO | LoginPage | Find element: ('id', 'username')
+2026-01-07 22:32:13,997 | INFO | LoginPage | Type into element: ('id', 'password')
+2026-01-07 22:32:13,997 | INFO | LoginPage | Find element: ('id', 'password')
+2026-01-07 22:32:14,033 | INFO | LoginPage | Click element: ('css selector', "button[type='submit']")
+2026-01-07 22:32:14,601 | INFO | LoginPage | Get text from element: ('id', 'flash')
+2026-01-07 22:32:14,601 | INFO | LoginPage | Find element: ('id', 'flash')
+2026-01-07 22:32:14,620 | INFO | LoginPage | ===== END test_login_success =====
+2026-01-07 22:35:07,682 | INFO | LoginPage | ===== START test_login_success =====
+2026-01-07 22:35:07,683 | INFO | LoginPage | Opening login page
+2026-01-07 22:35:07,683 | INFO | LoginPage | Open page: https://the-internet.herokuapp.com/login
+2026-01-07 22:35:08,750 | INFO | LoginPage | Logging in with username: tomsmith
+2026-01-07 22:35:08,750 | INFO | LoginPage | Type into element: ('id', 'username')
+2026-01-07 22:35:08,750 | INFO | LoginPage | Find element: ('id', 'username')
+2026-01-07 22:35:11,143 | INFO | LoginPage | Type into element: ('id', 'password')
+2026-01-07 22:35:11,143 | INFO | LoginPage | Find element: ('id', 'password')
+2026-01-07 22:35:11,177 | INFO | LoginPage | Click element: ('css selector', "button[type='submit']")
+2026-01-07 22:35:11,215 | INFO | LoginPage | Get text from element: ('id', 'flash')
+2026-01-07 22:35:11,215 | INFO | LoginPage | Find element: ('id', 'flash')
+2026-01-07 22:35:11,767 | INFO | LoginPage | ===== END test_login_success =====
+2026-01-07 22:37:27,317 | INFO | CheckboxPage | Open page: https://the-internet.herokuapp.com/checkboxes
+2026-01-07 22:37:28,530 | INFO | CheckboxPage | Check if element is selected: ('xpath', "(//input[@type='checkbox'])[1]")
+2026-01-07 22:37:28,530 | INFO | CheckboxPage | Find element: ('xpath', "(//input[@type='checkbox'])[1]")
+2026-01-07 22:37:30,863 | INFO | CheckboxPage | Click element: ('xpath', "(//input[@type='checkbox'])[1]")
+2026-01-07 22:37:30,913 | INFO | CheckboxPage | Check if element is selected: ('xpath', "(//input[@type='checkbox'])[2]")
+2026-01-07 22:37:30,913 | INFO | CheckboxPage | Find element: ('xpath', "(//input[@type='checkbox'])[2]")
+2026-01-07 22:37:30,921 | INFO | CheckboxPage | Click element: ('xpath', "(//input[@type='checkbox'])[2]")
+2026-01-07 22:37:32,968 | INFO | DropdownPage | Open page: https://the-internet.herokuapp.com/dropdown
+2026-01-07 22:37:34,021 | INFO | DropdownPage | Find element: ('id', 'dropdown')
+2026-01-07 22:37:36,067 | INFO | DropdownPage | Find element: ('id', 'dropdown')
+2026-01-07 22:37:36,092 | INFO | DropdownPage | Find element: ('id', 'dropdown')
+2026-01-07 22:37:36,123 | INFO | DropdownPage | Find element: ('id', 'dropdown')
+2026-01-07 22:37:38,168 | INFO | EnableDisablePage | Open page: https://the-internet.herokuapp.com/dynamic_controls
+2026-01-07 22:38:35,824 | INFO | LoginPage | ===== START test_login_success =====
+2026-01-07 22:38:35,824 | INFO | LoginPage | Opening login page
+2026-01-07 22:38:35,824 | INFO | LoginPage | Open page: https://the-internet.herokuapp.com/login
+2026-01-07 22:39:08,644 | INFO | LoginPage | Logging in with username: tomsmith
+2026-01-07 22:39:08,646 | INFO | LoginPage | Type into element: ('id', 'username')
+2026-01-07 22:39:08,646 | INFO | LoginPage | Find element: ('id', 'username')
+2026-01-07 22:39:08,740 | INFO | LoginPage | Type into element: ('id', 'password')
+2026-01-07 22:39:08,740 | INFO | LoginPage | Find element: ('id', 'password')
+2026-01-07 22:39:08,775 | INFO | LoginPage | Click element: ('css selector', "button[type='submit']")
+2026-01-07 22:39:08,813 | INFO | LoginPage | Get text from element: ('id', 'flash')
+2026-01-07 22:39:08,813 | INFO | LoginPage | Find element: ('id', 'flash')
+2026-01-07 22:39:09,415 | INFO | LoginPage | ===== END test_login_success =====
+2026-01-07 22:45:44,728 | INFO | LoginPage | ===== START test_login_success =====
+2026-01-07 22:45:44,729 | INFO | LoginPage | Opening login page
+2026-01-07 22:45:44,729 | INFO | LoginPage | Open page: https://the-internet.herokuapp.com/login
+2026-01-07 22:45:49,875 | INFO | LoginPage | Logging in with username: tomsmith
+2026-01-07 22:45:49,878 | INFO | LoginPage | Type into element: ('id', 'username')
+2026-01-07 22:45:49,878 | INFO | LoginPage | Find element: ('id', 'username')
+2026-01-07 22:45:49,990 | INFO | LoginPage | Type into element: ('id', 'password')
+2026-01-07 22:45:49,990 | INFO | LoginPage | Find element: ('id', 'password')
+2026-01-07 22:45:50,025 | INFO | LoginPage | Click element: ('css selector', "button[type='submit']")
+2026-01-07 22:45:50,064 | INFO | LoginPage | Get text from element: ('id', 'flash')
+2026-01-07 22:45:50,064 | INFO | LoginPage | Find element: ('id', 'flash')
+2026-01-07 22:45:50,673 | INFO | LoginPage | ===== END test_login_success =====
+2026-01-07 22:46:58,772 | INFO | LoginPage | ===== START test_login_success =====
+2026-01-07 22:46:58,772 | INFO | LoginPage | Opening login page
+2026-01-07 22:46:58,772 | INFO | LoginPage | Open page: https://the-internet.herokuapp.com/login
+2026-01-07 22:46:59,871 | INFO | LoginPage | Logging in with username: tomsmith
+2026-01-07 22:46:59,871 | INFO | LoginPage | Type into element: ('id', 'username')
+2026-01-07 22:46:59,872 | INFO | LoginPage | Find element: ('id', 'username')
+2026-01-07 22:47:02,203 | INFO | LoginPage | Type into element: ('id', 'password')
+2026-01-07 22:47:02,203 | INFO | LoginPage | Find element: ('id', 'password')
+2026-01-07 22:47:02,251 | INFO | LoginPage | Click element: ('css selector', "button[type='submit']")
+2026-01-07 22:47:02,298 | INFO | LoginPage | Get text from element: ('id', 'flash')
+2026-01-07 22:47:02,298 | INFO | LoginPage | Find element: ('id', 'flash')
+2026-01-07 22:47:02,838 | INFO | LoginPage | ===== END test_login_success =====
+2026-01-07 22:49:20,497 | INFO | LoginPage | ===== START test_login_success =====
+2026-01-07 22:49:20,497 | INFO | LoginPage | Opening login page
+2026-01-07 22:49:20,497 | INFO | LoginPage | Open page: https://the-internet.herokuapp.com/login
+2026-01-07 22:49:22,080 | INFO | LoginPage | Logging in with username: tomsmith
+2026-01-07 22:49:22,081 | INFO | LoginPage | Type into element: ('id', 'username')
+2026-01-07 22:49:22,081 | INFO | LoginPage | Find element: ('id', 'username')
+2026-01-07 22:49:24,417 | INFO | LoginPage | Type into element: ('id', 'password')
+2026-01-07 22:49:24,417 | INFO | LoginPage | Find element: ('id', 'password')
+2026-01-07 22:49:24,454 | INFO | LoginPage | Click element: ('css selector', "button[type='submit']")
+2026-01-07 22:49:24,495 | INFO | LoginPage | Get text from element: ('id', 'flash')
+2026-01-07 22:49:24,495 | INFO | LoginPage | Find element: ('id', 'flash')
+2026-01-07 22:49:25,151 | INFO | LoginPage | ===== END test_login_success =====
+2026-01-07 22:52:26,040 | INFO | LoginPage | ===== START test_login_success =====
+2026-01-07 22:52:26,041 | INFO | LoginPage | Opening login page
+2026-01-07 22:52:26,041 | INFO | LoginPage | Open page: https://the-internet.herokuapp.com/login
+2026-01-07 22:52:57,353 | INFO | LoginPage | Logging in with username: tomsmith
+2026-01-07 22:52:57,355 | INFO | LoginPage | Type into element: ('id', 'username')
+2026-01-07 22:52:57,356 | INFO | LoginPage | Find element: ('id', 'username')
+2026-01-07 22:52:57,466 | INFO | LoginPage | Type into element: ('id', 'password')
+2026-01-07 22:52:57,467 | INFO | LoginPage | Find element: ('id', 'password')
+2026-01-07 22:52:57,508 | INFO | LoginPage | Click element: ('css selector', "button[type='submit']")
+2026-01-07 22:52:57,547 | INFO | LoginPage | Get text from element: ('id', 'flash')
+2026-01-07 22:52:57,547 | INFO | LoginPage | Find element: ('id', 'flash')
+2026-01-07 22:52:58,236 | INFO | LoginPage | ===== END test_login_success =====

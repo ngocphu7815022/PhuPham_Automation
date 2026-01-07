@@ -11,9 +11,11 @@ class LoginPage(BasePage):
     message = (By.ID, 'flash')
 
     def open_page(self):
-        self.driver.get(self.url)
+        self.logger.info("Opening login page")
+        self.open(self.url)
 
     def login(self, username, password):
+        self.logger.info(f"Logging in with username: {username}")
         self.type(self.username_input, username)
         self.type(self.password_input, password)
         self.click(self.login_button) 
