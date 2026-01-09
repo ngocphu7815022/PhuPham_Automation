@@ -1,7 +1,11 @@
 from pages.login_page import LoginPage
+from utils import data_loader
 import pytest
 import os 
 
+login_data_json = data_loader.load_json("data_login.json")
+
+"""
 @pytest.mark.positive
 def test_login_success(driver):
 
@@ -66,3 +70,20 @@ def test_login_invalid_password(driver):
     expected_url = "https://the-internet.herokuapp.com/login"
 
     assert actual_url == expected_url, f"Expected URL to be '{expected_url}' but got '{actual_url}'" 
+
+"""
+
+@pytest.mark.parametrize(
+    "case_name, data",
+    login_data_json.items()
+)
+def test_login_data_driven(driver, case_name, data):
+    login_page = LoginPage(driver)
+    login_page.logger.info(f"Run scenario: {case_name}")
+
+    login_page.open_page()
+    login_page.login(data["username"], data["password"])
+
+    assert login_page.is_message_displayed()
+    assert data["message"] in login_page.get_message()
+    assert data["expected_url"] in driver.current_url

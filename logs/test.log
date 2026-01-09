@@ -107,3 +107,21 @@
 2026-01-07 22:52:57,547 | INFO | LoginPage | Get text from element: ('id', 'flash')
 2026-01-07 22:52:57,547 | INFO | LoginPage | Find element: ('id', 'flash')
 2026-01-07 22:52:58,236 | INFO | LoginPage | ===== END test_login_success =====
+2026-01-09 22:40:45,423 | INFO | LoginPage | Run scenario: invalid_username
+2026-01-09 22:40:45,424 | INFO | LoginPage | Opening login page
+2026-01-09 22:40:45,424 | INFO | LoginPage | Open page: https://the-internet.herokuapp.com/login
+2026-01-09 22:40:53,546 | INFO | LoginPage | Logging in with username: invalid_user
+2026-01-09 22:40:53,546 | INFO | LoginPage | Type into element: ('id', 'username')
+2026-01-09 22:40:53,546 | INFO | LoginPage | Find element: ('id', 'username')
+2026-01-09 22:40:53,671 | INFO | LoginPage | Type into element: ('id', 'password')
+2026-01-09 22:40:53,671 | INFO | LoginPage | Find element: ('id', 'password')
+2026-01-09 22:40:53,707 | INFO | LoginPage | Click element: ('css selector', "button[type='submit']")
+2026-01-09 22:40:56,099 | INFO | LoginPage | Check visibility of element: ('id', 'flash')
+2026-01-09 22:40:56,111 | INFO | LoginPage | Get text from element: ('id', 'flash')
+2026-01-09 22:40:56,111 | INFO | LoginPage | Find element: ('id', 'flash')
+2026-01-09 22:40:57,928 | INFO | LoginPage | Run scenario: invalid_password
+2026-01-09 22:40:57,928 | INFO | LoginPage | Opening login page
+2026-01-09 22:40:57,928 | INFO | LoginPage | Open page: https://the-internet.herokuapp.com/login
+2026-01-09 22:41:20,273 | INFO | LoginPage | Logging in with username: tomsmith
+2026-01-09 22:41:20,273 | INFO | LoginPage | Type into element: ('id', 'username')
+2026-01-09 22:41:20,273 | INFO | LoginPage | Find element: ('id', 'username')
