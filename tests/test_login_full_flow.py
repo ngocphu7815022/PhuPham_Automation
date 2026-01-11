@@ -73,6 +73,7 @@ def test_login_invalid_password(driver):
 
 """
 
+
 @pytest.mark.parametrize(
     "case_name, data",
     login_data_json.items()
@@ -87,3 +88,4 @@ def test_login_data_driven(driver, case_name, data):
     assert login_page.is_message_displayed()
     assert data["message"] in login_page.get_message()
     assert data["expected_url"] in driver.current_url
+
