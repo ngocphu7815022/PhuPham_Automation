@@ -2,7 +2,7 @@
   "invalid_username": {
     "username": "invalid_user",
     "password": "invalid_password",
-    "message": "Your username is invalid!",
+    "message": "Your username is invalid!1234",
     "expected_url": "/login"
   },
   "invalid_password": {

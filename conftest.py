@@ -7,6 +7,11 @@ from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+SCREENSHOT_DIR = os.path.join(PROJECT_ROOT, "screenshots")
+os.makedirs(SCREENSHOT_DIR, exist_ok=True)
+
+
 def pytest_addoption(parser):
     parser.addoption(
         "--browser",
@@ -18,7 +23,7 @@ def pytest_addoption(parser):
 #Selct browser driver based on command line option
 @pytest.fixture
 def driver(request):
-    browser = request.config.getoption("--browser")
+    browser = request.config.getoption("--browser") 
 
     if browser == "chrome":
         driver = webdriver.Chrome(
@@ -35,24 +40,29 @@ def driver(request):
     yield driver
     driver.quit()
 
+pytest_html = None
+
+def pytest_configure(config):
+    global pytest_html
+    pytest_html = config.pluginmanager.getplugin("html")
+
 # Capture screenshot on test failure
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item, call):
-    # Chạy test trước
     outcome = yield
     report = outcome.get_result()
 
-    # Chỉ chụp khi test FAIL ở phase "call"
     if report.when == "call" and report.failed:
         driver = item.funcargs.get("driver")
-        if driver:
-            screenshots_dir = "screenshots"
-            os.makedirs(screenshots_dir, exist_ok=True)
+        if not driver:
+            return
 
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            test_name = item.name
-            file_name = f"{test_name}_{timestamp}.png"
-            file_path = os.path.join(screenshots_dir, file_name)
-
+        try:
+            file_path = os.path.join(SCREENSHOT_DIR, f"{item.name}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png")
             driver.save_screenshot(file_path)
-            print(f"\n📸 Screenshot saved to: {file_path}")
+            if pytest_html:
+                extra = getattr(report, "extra", [])
+                extra.append(pytest_html.extras.png(file_path))
+                report.extra = extra
+        except Exception as e:
+            print(f"[WARN] Screenshot hook failed: {e}")
