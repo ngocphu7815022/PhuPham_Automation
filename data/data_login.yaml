@@ -1,0 +1,17 @@
+invalid_username:
+  username: invalid_user
+  password: invalid_password
+  message: Your username is invalid!
+  expected_url: /login
+
+invalid_password:
+  username: tomsmith
+  password: a!
+  message: Your password is invalid!
+  expected_url: /login
+
+success:
+  username: tomsmith
+  password: SuperSecretPassword!
+  message: You logged into a secure area!
+  expected_url: /secure
