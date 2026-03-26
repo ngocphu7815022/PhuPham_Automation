@@ -1,0 +1,71 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+.venv/
+venv/
+env/
+ENV/
+
+# =========================
+# Pytest
+# =========================
+.pytest_cache/
+.cache/
+
+# =========================
+# Logs & Reports
+# =========================
+logs/
+*.log
+reports/
+allure-results/
+allure-report/
+
+# =========================
+# Screenshots (automation)
+# =========================
+screenshots/
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# OS
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Environment variables
+# =========================
+.env
+.env.*
+
+# =========================
+# Coverage
+# =========================
+.coverage
+coverage.xml
+htmlcov/
+
+# =========================
+# Build / dist
+# =========================
+build/
+dist/
+*.egg-info/
+
+# =========================
+# Misc
+# =========================
+*.sqlite3
