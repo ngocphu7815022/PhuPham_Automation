@@ -1,6 +1,7 @@
 import logging
 import os
 
+
 def get_project_root():
     current = os.path.abspath(__file__)
     while current != "/":
@@ -9,8 +10,10 @@ def get_project_root():
         current = os.path.dirname(current)
     raise RuntimeError("pytest.ini not found. Project root not detected.")
 
+
 PROJECT_ROOT = get_project_root()
 LOG_DIR = os.path.join(PROJECT_ROOT, "logs")
+
 
 def get_logger(name):
     logger = logging.getLogger(name)

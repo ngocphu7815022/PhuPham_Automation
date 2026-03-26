@@ -1,7 +1,7 @@
 from pages.login_page import LoginPage
 from utils import data_loader
 import pytest
-import os 
+import os
 
 login_data_json = data_loader.load_json("data_login.json")
 
@@ -74,10 +74,7 @@ def test_login_invalid_password(driver):
 """
 
 
-@pytest.mark.parametrize(
-    "case_name, data",
-    login_data_json.items()
-)
+@pytest.mark.parametrize("case_name, data", login_data_json.items())
 def test_login_data_driven(driver, case_name, data):
     login_page = LoginPage(driver)
     login_page.logger.info(f"Run scenario: {case_name}")
@@ -88,4 +85,3 @@ def test_login_data_driven(driver, case_name, data):
     assert login_page.is_message_displayed()
     assert data["message"] in login_page.get_message()
     assert data["expected_url"] in driver.current_url
-

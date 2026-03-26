@@ -12,4 +12,4 @@ class CheckboxPage(BasePage):
 
     def uncheck_second_checkbox(self):
         if self.is_selected(self.checkbox2):
-            self.click(self.checkbox2)        
+            self.click(self.checkbox2)

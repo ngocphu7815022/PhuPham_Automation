@@ -31,26 +31,28 @@ def test_login_success(driver):
 
 """
 
+
 @pytest.mark.parametrize(
     "username, password, message",
     [
         ("invalid_user", "invalid_password", "Your username is invalid!"),
         ("tomsmith", "a!", "Your password is invalid!"),
         ("tomsmith", "SuperSecretPassword!", "You logged into a secure area!"),
-    ]
+    ],
 )
-def test_login(driver, username,password,message):
+def test_login(driver, username, password, message):
     login_page = LoginPage(driver)
     login_page.open_page()
-    
+
     login_page.login(username, password)
 
-    #verify message is displayed
+    # verify message is displayed
     assert login_page.is_message_displayed(), "Message is not displayed"
-    #verify message text
+    # verify message text
     actual_message = login_page.get_message()
-    assert message in actual_message, f"Expected message to contain '{message}' but got '{actual_message}'"
-
+    assert (
+        message in actual_message
+    ), f"Expected message to contain '{message}' but got '{actual_message}'"
 
     # verify URL as expected
     actual_url = driver.current_url
@@ -60,5 +62,6 @@ def test_login(driver, username,password,message):
     else:
         expected_url = "https://the-internet.herokuapp.com/login"
 
-
-    assert actual_url == expected_url, f"Expected URL to be '{expected_url}' but got '{actual_url}'"
+    assert (
+        actual_url == expected_url
+    ), f"Expected URL to be '{expected_url}' but got '{actual_url}'"

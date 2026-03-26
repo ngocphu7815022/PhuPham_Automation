@@ -12,5 +12,5 @@ class RadioButtonPage(BasePage):
         return self.get_text(self.result_text)
 
     def select_impressive(self):
-        self.click(self.radio_button_impressive)       
+        self.click(self.radio_button_impressive)
         return self.get_text(self.result_text)

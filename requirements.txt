@@ -3,3 +3,9 @@ selenium==4.21.0
 webdriver-manager==4.0.1
 PyYAML==6.0.1
 openpyxl==3.1.2
+
+# formatting
+black==24.4.2
+
+# report
+pytest-html==4.1.1

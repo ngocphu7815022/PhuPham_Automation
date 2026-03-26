@@ -6,10 +6,10 @@ from selenium.webdriver.support import expected_conditions as EC
 
 class DetailedPurchasePage(BasePage):
     header = (By.XPATH, "//h1[normalize-space()='Thank you for your purchase today!']")
-    
+
     def is_header_displayed(self):
         return self.is_visible(self.header)
-    
+
     def get_header(self):
         return self.get_text(self.header)
 
@@ -24,7 +24,7 @@ class DetailedPurchasePage(BasePage):
                 value = cells[1].text.strip()
                 data[key] = value
         return data
-    
+
     def verify_table_data(self, actual_data, expected_data):
         errors = []
 
@@ -35,10 +35,5 @@ class DetailedPurchasePage(BasePage):
 
             actual_value = actual_data[key]
             if actual_value != expected_value:
-                errors.append(
-                    f"{key}: expected {expected_value}, got {actual_value}"
-                )
+                errors.append(f"{key}: expected {expected_value}, got {actual_value}")
         assert not errors, ";\n".join(errors)
-
-
-

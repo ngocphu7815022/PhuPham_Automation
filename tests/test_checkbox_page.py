@@ -1,5 +1,6 @@
 from pages.checkbox_page import CheckboxPage
 
+
 def test_checkbox_page(driver):
     checkbox_page = CheckboxPage(driver)
     checkbox_page.open("https://the-internet.herokuapp.com/checkboxes")

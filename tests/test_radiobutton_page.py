@@ -1,5 +1,6 @@
 from pages.radiobutton_page import RadioButtonPage
 
+
 def test_radiobutton_page(driver):
     radio_button_page = RadioButtonPage(driver)
     radio_button_page.open("https://demoqa.com/radio-button")

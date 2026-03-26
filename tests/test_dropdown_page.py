@@ -1,5 +1,6 @@
 from pages.dropdown_page import DropdownPage
 
+
 def test_dropdown_page(driver):
     dropdown_page = DropdownPage(driver)
     dropdown_page.open("https://the-internet.herokuapp.com/dropdown")
