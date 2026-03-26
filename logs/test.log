@@ -1714,3 +1714,61 @@
 2026-03-26 23:22:34,254 | INFO | DetailedPurchasePage | Check visibility of element: ('xpath', "//h1[normalize-space()='Thank you for your purchase today!']")
 2026-03-26 23:22:34,268 | INFO | DetailedPurchasePage | Get text from element: ('xpath', "//h1[normalize-space()='Thank you for your purchase today!']")
 2026-03-26 23:22:34,269 | INFO | DetailedPurchasePage | Find element: ('xpath', "//h1[normalize-space()='Thank you for your purchase today!']")
+2026-03-26 23:47:49,293 | INFO | WelcomePage | Open page: https://blazedemo.com/
+2026-03-26 23:47:57,985 | INFO | CheckboxPage | Open page: https://the-internet.herokuapp.com/checkboxes
+2026-03-26 23:47:58,834 | INFO | CheckboxPage | Check if element is selected: ('xpath', "(//input[@type='checkbox'])[1]")
+2026-03-26 23:47:58,834 | INFO | CheckboxPage | Find element: ('xpath', "(//input[@type='checkbox'])[1]")
+2026-03-26 23:48:00,533 | INFO | DropdownPage | Open page: https://the-internet.herokuapp.com/dropdown
+2026-03-26 23:48:01,700 | INFO | DropdownPage | Find element: ('id', 'dropdown')
+2026-03-26 23:48:03,402 | INFO | EnableDisablePage | Open page: https://the-internet.herokuapp.com/dynamic_controls
+2026-03-26 23:48:05,563 | INFO | LoginPage | Opening login page
+2026-03-26 23:48:05,563 | INFO | LoginPage | Open page: https://the-internet.herokuapp.com/login
+2026-03-26 23:48:06,049 | INFO | LoginPage | Logging in with username: invalid_user
+2026-03-26 23:48:06,049 | INFO | LoginPage | Type into element: ('id', 'username')
+2026-03-26 23:48:06,049 | INFO | LoginPage | Find element: ('id', 'username')
+2026-03-26 23:48:07,727 | INFO | LoginPage | Opening login page
+2026-03-26 23:48:07,727 | INFO | LoginPage | Open page: https://the-internet.herokuapp.com/login
+2026-03-26 23:48:08,152 | INFO | LoginPage | Logging in with username: tomsmith
+2026-03-26 23:48:08,152 | INFO | LoginPage | Type into element: ('id', 'username')
+2026-03-26 23:48:08,152 | INFO | LoginPage | Find element: ('id', 'username')
+2026-03-26 23:49:25,374 | INFO | WelcomePage | Open page: https://blazedemo.com/
+2026-03-26 23:49:37,880 | INFO | FlightsPage | Check visibility of element: ('xpath', "//h3[normalize-space()='Flights from Portland to London:']")
+2026-03-26 23:49:37,890 | INFO | FlightsPage | Get text from element: ('xpath', "//h3[normalize-space()='Flights from Portland to London:']")
+2026-03-26 23:49:37,890 | INFO | FlightsPage | Find element: ('xpath', "//h3[normalize-space()='Flights from Portland to London:']")
+2026-03-26 23:49:38,276 | INFO | DetailedPage | Check visibility of element: ('xpath', '//h2')
+2026-03-26 23:49:38,285 | INFO | DetailedPage | Get text from element: ('xpath', '//h2')
+2026-03-26 23:49:38,285 | INFO | DetailedPage | Find element: ('xpath', '//h2')
+2026-03-26 23:49:38,292 | INFO | DetailedPage | Get text from element: ('xpath', "//p[normalize-space()='Airline: United']")
+2026-03-26 23:49:38,292 | INFO | DetailedPage | Find element: ('xpath', "//p[normalize-space()='Airline: United']")
+2026-03-26 23:49:38,301 | INFO | DetailedPage | Get text from element: ('xpath', "//p[normalize-space()='Flight Number: UA954']")
+2026-03-26 23:49:38,301 | INFO | DetailedPage | Find element: ('xpath', "//p[normalize-space()='Flight Number: UA954']")
+2026-03-26 23:49:38,309 | INFO | DetailedPage | Get text from element: ('xpath', "//p[normalize-space()='Price: 400']")
+2026-03-26 23:49:38,309 | INFO | DetailedPage | Find element: ('xpath', "//p[normalize-space()='Price: 400']")
+2026-03-26 23:49:38,317 | INFO | DetailedPage | Get text from element: ('xpath', "//p[normalize-space()='Arbitrary Fees and Taxes: 514.76']")
+2026-03-26 23:49:38,317 | INFO | DetailedPage | Find element: ('xpath', "//p[normalize-space()='Arbitrary Fees and Taxes: 514.76']")
+2026-03-26 23:49:38,324 | INFO | DetailedPage | Get text from element: ('xpath', '/html[1]/body[1]/div[2]/p[5]')
+2026-03-26 23:49:38,324 | INFO | DetailedPage | Find element: ('xpath', '/html[1]/body[1]/div[2]/p[5]')
+2026-03-26 23:49:38,331 | INFO | DetailedPage | Type into element: ('xpath', "//input[@id='inputName']")
+2026-03-26 23:49:38,331 | INFO | DetailedPage | Find element: ('xpath', "//input[@id='inputName']")
+2026-03-26 23:49:38,420 | INFO | DetailedPage | Type into element: ('xpath', "//input[@id='address']")
+2026-03-26 23:49:38,420 | INFO | DetailedPage | Find element: ('xpath', "//input[@id='address']")
+2026-03-26 23:49:38,450 | INFO | DetailedPage | Type into element: ('xpath', "//input[@id='city']")
+2026-03-26 23:49:38,450 | INFO | DetailedPage | Find element: ('xpath', "//input[@id='city']")
+2026-03-26 23:49:38,477 | INFO | DetailedPage | Type into element: ('xpath', "//input[@id='state']")
+2026-03-26 23:49:38,477 | INFO | DetailedPage | Find element: ('xpath', "//input[@id='state']")
+2026-03-26 23:49:38,505 | INFO | DetailedPage | Type into element: ('xpath', "//input[@id='zipCode']")
+2026-03-26 23:49:38,505 | INFO | DetailedPage | Find element: ('xpath', "//input[@id='zipCode']")
+2026-03-26 23:49:38,533 | INFO | DetailedPage | Type into element: ('xpath', "//input[@id='creditCardNumber']")
+2026-03-26 23:49:38,533 | INFO | DetailedPage | Find element: ('xpath', "//input[@id='creditCardNumber']")
+2026-03-26 23:49:38,563 | INFO | DetailedPage | Type into element: ('xpath', "//input[@id='creditCardMonth']")
+2026-03-26 23:49:38,563 | INFO | DetailedPage | Find element: ('xpath', "//input[@id='creditCardMonth']")
+2026-03-26 23:49:38,589 | INFO | DetailedPage | Type into element: ('xpath', "//input[@id='creditCardYear']")
+2026-03-26 23:49:38,589 | INFO | DetailedPage | Find element: ('xpath', "//input[@id='creditCardYear']")
+2026-03-26 23:49:38,617 | INFO | DetailedPage | Type into element: ('xpath', "//input[@id='nameOnCard']")
+2026-03-26 23:49:38,617 | INFO | DetailedPage | Find element: ('xpath', "//input[@id='nameOnCard']")
+2026-03-26 23:49:38,668 | INFO | DetailedPage | Check if element is selected: ('xpath', "//input[@id='rememberMe']")
+2026-03-26 23:49:38,668 | INFO | DetailedPage | Find element: ('xpath', "//input[@id='rememberMe']")
+2026-03-26 23:49:38,675 | INFO | DetailedPage | Click element: ('xpath', "//input[@id='rememberMe']")
+2026-03-26 23:49:39,120 | INFO | DetailedPurchasePage | Check visibility of element: ('xpath', "//h1[normalize-space()='Thank you for your purchase today!']")
+2026-03-26 23:49:39,130 | INFO | DetailedPurchasePage | Get text from element: ('xpath', "//h1[normalize-space()='Thank you for your purchase today!']")
+2026-03-26 23:49:39,130 | INFO | DetailedPurchasePage | Find element: ('xpath', "//h1[normalize-space()='Thank you for your purchase today!']")

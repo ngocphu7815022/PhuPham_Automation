@@ -122,7 +122,6 @@ def test_booking(driver):
     # Step 9: Verify details in the Purchase Page
     # Get actual data from the table
     actual_data_table = detailed_purchase.get_table_data()
-    print(actual_data_table)
 
     expected_data_table = {
         'Id': '1616482160957',
