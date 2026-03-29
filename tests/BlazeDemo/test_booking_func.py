@@ -1,7 +1,8 @@
 import pytest
-from pages.welcome_page import WelcomePage
-from pages.flights_page import FlightsPage
+from pages.BlazeDemo.welcome_page import WelcomePage
+from pages.BlazeDemo.detailed_flights_page import DetailedPage
 from utils.common_assert import assert_equal
+
 
 
 def test_booking(driver):

@@ -1,5 +1,5 @@
 from pages.base_page import BasePage
-from pages.flights_page import FlightsPage
+from pages.BlazeDemo.flights_page import FlightsPage
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait

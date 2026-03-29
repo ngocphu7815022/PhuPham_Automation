@@ -1,5 +1,5 @@
 from pages.base_page import BasePage
-from pages.detailed_flights_page import DetailedPage
+from pages.BlazeDemo.detailed_flights_page import DetailedPage
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC

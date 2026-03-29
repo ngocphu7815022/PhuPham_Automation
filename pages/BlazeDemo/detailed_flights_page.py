@@ -1,5 +1,5 @@
 from pages.base_page import BasePage
-from pages.detailed_purchase_page import DetailedPurchasePage
+from pages.BlazeDemo.detailed_purchase_page import DetailedPurchasePage
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
