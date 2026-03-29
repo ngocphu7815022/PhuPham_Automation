@@ -1,10 +1,12 @@
 import pytest
 from pages.welcome_page import WelcomePage
 from pages.flights_page import FlightsPage
+from utils.common_assert import assert_equal
 
 
 def test_booking(driver):
     welcome_page = WelcomePage(driver)
+
     # Step 1:Open link
     welcome_page.open("https://blazedemo.com/")
 
@@ -17,14 +19,16 @@ def test_booking(driver):
     ####
     # Verify that selecting departure, destination is successful
     ####
+
+    # Departure
     selected_departure = welcome_page.get_departure_selected_text()
-    assert (
-        selected_departure == "Portland"
-    ), f"Expected text is Portland, but got '{selected_departure}'"
+    expected_departure = "Portland"
+    assert_equal(selected_departure, expected_departure, "Departure")
+
+    # Destination
     selected_destination = welcome_page.get_destination_selected_text()
-    assert (
-        selected_destination == "London"
-    ), f"Expected text is London, but got '{selected_destination}'"
+    expected_destination = "London"
+    assert_equal(selected_destination, expected_destination, "Destination")
 
     # Step 4: Click on 'Find Flights' button
     flights_page = welcome_page.select_find_flights()
@@ -39,9 +43,7 @@ def test_booking(driver):
     expected_header = f"Flights from {selected_departure} to {selected_destination}:"
 
     # Check route text
-    assert (
-        actual_header == expected_header
-    ), f"Expected text is {expected_header}, but got '{actual_header}'"
+    assert_equal(actual_header, expected_header, "Flights Page header")
 
     # Step 5: Find how many flights displayed
     flights_count = flights_page.get_flights_count()
@@ -59,54 +61,44 @@ def test_booking(driver):
     expected_detailed_header = "Your flight from TLV to SFO has been reserved."
 
     # Check detailed booking text
-    assert (
-        actual_detailed_header == expected_detailed_header
-    ), f"Expected text is {actual_detailed_header}, but got '{expected_detailed_header}'"
+    assert_equal(
+        actual_detailed_header, expected_detailed_header, "Detailed Booking header"
+    )
 
     # Step 7: Verify the detailed belows displayed
-    # Airlane
-    actual_airline = detailed_flights.get_airline()
-    expected_airline = "Airline: United"
-    assert (
-        actual_airline == expected_airline
-    ), f"Expected text is {actual_airline}, but got '{expected_airline}'"
+    fields_to_verify = {
+        "airline": ("Airline: United", detailed_flights.get_airline),
+        "flight_number": ("Flight Number: UA954", detailed_flights.get_flight_number),
+        "price": ("Price: 400", detailed_flights.get_price),
+        "fees_taxes": (
+            "Arbitrary Fees and Taxes: 514.76",
+            detailed_flights.get_fees_taxes,
+        ),
+        "total_cost": ("Total Cost: 914.76", detailed_flights.get_total_cost),
+    }
 
-    # Flight Number
-    actual_flight_number = detailed_flights.get_flight_number()
-    expected_flight_number = "Flight Number: UA954"
-    assert (
-        actual_flight_number == expected_flight_number
-    ), f"Expected text is {actual_flight_number}, but got '{expected_flight_number}'"
+    actual_values = {}
 
-    # Price
-    actual_price = detailed_flights.get_price()
-    expected_price = "Price: 400"
-    assert (
-        actual_price == expected_price
-    ), f"Expected text is {actual_price}, but got '{expected_price}'"
-    price_number = detailed_flights.extract_float(actual_price)
+    for field, (expected, getter) in fields_to_verify.items():
+        actual = getter()
+        actual_values[field] = actual
 
-    # Fees and taxes
-    actual_fees_taxes = detailed_flights.get_fees_taxes()
-    expected_fees_taxes = "Arbitrary Fees and Taxes: 514.76"
-    assert (
-        actual_fees_taxes == expected_fees_taxes
-    ), f"Expected text is {actual_fees_taxes}, but got '{expected_fees_taxes}'"
-    fees_taxes_number = detailed_flights.extract_float(actual_fees_taxes)
-
-    # Total
-    actual_total_cost = detailed_flights.get_total_cost()
-    expected_total_cost = "Total Cost: 914.76"
-    assert (
-        actual_total_cost == expected_total_cost
-    ), f"Expected text is {actual_total_cost}, but got '{expected_total_cost}'"
-    total_cost_number = detailed_flights.extract_float(actual_total_cost)
+        assert (
+            actual == expected
+        ), f"[{field}] Expected '{expected}', but got '{actual}'"
 
     # Toal cost = price + fees_taxes
+    price_number = detailed_flights.extract_float(detailed_flights.get_price())
+    fees_taxes_number = detailed_flights.extract_float(
+        detailed_flights.get_fees_taxes()
+    )
     total = price_number + fees_taxes_number
+    total_cost_number = detailed_flights.extract_float(
+        detailed_flights.get_total_cost()
+    )
     assert (
         total == total_cost_number
-    ), f"Expected text is {total}, but got {total_cost_number}"
+    ), f"Expected cost is {total}', but got {total_cost_number}"
 
     # Step 8: Provide all detailed information
     detailed_flights.enter_detailed_information(
@@ -135,9 +127,11 @@ def test_booking(driver):
     expected_detailed_purchase_header = "Thank you for your purchase today!"
 
     # Check detailed booking text
-    assert (
-        actual_detailed_purchase_header == expected_detailed_purchase_header
-    ), f"Expected text is {actual_detailed_purchase_header}, but got '{expected_detailed_purchase_header}'"
+    assert_equal(
+        actual_detailed_purchase_header,
+        expected_detailed_purchase_header,
+        "Purchase Page Header",
+    )
 
     # Step 9: Verify details in the Purchase Page
     # Get actual data from the table
