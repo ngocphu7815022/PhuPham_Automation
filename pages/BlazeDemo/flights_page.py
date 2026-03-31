@@ -3,6 +3,7 @@ from pages.BlazeDemo.detailed_flights_page import DetailedPage
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import allure
 
 
 class FlightsPage(BasePage):
@@ -18,11 +19,12 @@ class FlightsPage(BasePage):
     def get_header(self):
         return self.get_text(self.header)
 
-    # Get flights count
+    @allure.step("Verify that route has flights")
     def get_flights_count(self):
         rows = self.driver.find_elements(*self.flights_rows)
         return len(rows)
 
+    @allure.step("Select second 'Choose This Flight' button")
     def select_second_button(self):
         self.driver.find_element(*self.second_button).click()
         # WAIT cho page mới load

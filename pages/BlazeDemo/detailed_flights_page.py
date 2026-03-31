@@ -5,6 +5,7 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import re
+import allure
 
 
 class DetailedPage(BasePage):
@@ -50,7 +51,8 @@ class DetailedPage(BasePage):
 
     def get_total_cost(self):
         return self.get_text(self.total_cost_text)
-
+    
+    @allure.step("Enter detailed information")
     def enter_detailed_information(
         self,
         name,
