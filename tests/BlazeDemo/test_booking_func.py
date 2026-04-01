@@ -4,7 +4,6 @@ from pages.BlazeDemo.detailed_flights_page import DetailedPage
 from utils.common_assert import assert_equal
 
 
-
 def test_booking(driver):
     welcome_page = WelcomePage(driver)
 

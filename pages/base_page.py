@@ -20,11 +20,11 @@ class BasePage:
     def find(self, locator):
         self.logger.info(f"Find element: {locator}")
         return self.wait.until(EC.presence_of_element_located(locator))
-    
+
     def finds(self, locator):
         self.logger.info(f"Find elements: {locator}")
         return self.wait.until(EC.presence_of_all_elements_located(locator))
-    
+
     def find_visible(self, locator):
         self.logger.debug(f"Find visible element: {locator}")
         return self.wait.until(EC.visibility_of_element_located(locator))

@@ -51,7 +51,7 @@ class DetailedPage(BasePage):
 
     def get_total_cost(self):
         return self.get_text(self.total_cost_text)
-    
+
     @allure.step("Enter detailed information")
     def enter_detailed_information(
         self,

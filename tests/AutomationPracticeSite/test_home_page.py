@@ -3,7 +3,6 @@ from pages.AutomationPracticeSite.home_page import HomePage
 from utils.common_assert import assert_equal
 
 
-
 def test_booking(driver):
     home_page = HomePage(driver)
 
