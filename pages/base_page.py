@@ -21,6 +21,10 @@ class BasePage:
         self.logger.info(f"Find element: {locator}")
         return self.wait.until(EC.presence_of_element_located(locator))
 
+    def finds(self, locator):
+        self.logger.info(f"Find elements: {locator}")
+        return self.wait.until(EC.presence_of_all_elements_located(locator))
+
     def find_visible(self, locator):
         self.logger.debug(f"Find visible element: {locator}")
         return self.wait.until(EC.visibility_of_element_located(locator))
@@ -72,3 +76,8 @@ class BasePage:
 
     def wait_until_disabled(self, locator):
         self.wait.until(lambda driver: not self.find(locator).is_enabled())
+
+    # --- Get page source ---
+    def get_page_source(self):
+        self.logger.info("Get page source")
+        return self.driver.page_source
