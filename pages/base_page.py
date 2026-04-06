@@ -81,3 +81,13 @@ class BasePage:
     def get_page_source(self):
         self.logger.info("Get page source")
         return self.driver.page_source
+
+    # --- Get validation message ---
+    def get_validation_message_with_wait(self, locator, timeout=15):
+        element = self.find(locator)
+
+        WebDriverWait(self.driver, timeout).until(
+            lambda d: element.get_attribute("validationMessage") not in ["", None]
+        )
+
+        return element.get_attribute("validationMessage")

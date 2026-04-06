@@ -6,10 +6,10 @@ import allure
 
 
 class MyAccountDetailedPage(BasePage):
-    span_hello = (By.XPATH,"//p[contains(text(),'Hello')]")
+    span_hello = (By.XPATH, "//p[contains(text(),'Hello')]")
 
     def get_hello_text(self):
         self.get_text(self.span_hello)
 
     def get_email_to_username(self, email):
-        return email.split('@')[0]
+        return email.split("@")[0]
