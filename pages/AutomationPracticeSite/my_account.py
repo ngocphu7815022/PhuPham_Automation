@@ -10,6 +10,7 @@ class MyAccountPage(BasePage):
     tb_reg_email = (By.XPATH, "//input[@id='reg_email']")
     tb_reg_password = (By.XPATH, "//input[@id='reg_password']")
     btn_reg = (By.XPATH, "//input[@name='register']")
+    password_strength = (By.CSS_SELECTOR, ".woocommerce-password-strength")
     tb_email = (By.XPATH, "//input[@id='username']")
     tb_password = (By.XPATH, "//input[@id='password']")
     btn_login = (By.XPATH, "//input[@name='login']")
@@ -24,9 +25,17 @@ class MyAccountPage(BasePage):
     def get_validation_reg_email(self):
         return self.get_validation_message_with_wait(self.tb_reg_email)
 
+    def wait_for_register_button_ready(self):
+        self.wait.until(EC.element_to_be_clickable(self.btn_reg))
+
     def register_account(self, username, password):
         self.type(self.tb_reg_email, username)
         self.type(self.tb_reg_password, password)
+
+        # WooCommerce validates password strength asynchronously and may keep
+        # the Register button disabled for a short time after typing.
+        if password:
+            self.wait_for_register_button_ready()
         """
         WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located((By.XPATH, "//p[contains(text(),'Hello')]"))
