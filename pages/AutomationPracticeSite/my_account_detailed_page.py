@@ -6,6 +6,8 @@ import allure
 class MyAccountDetailedPage(BasePage):
     span_hello = (By.XPATH, "//p[contains(text(),'Hello')]")
     lbtn_SignOut = (By.XPATH, "//a[normalize-space()='Sign out']")
+    lbtn_Dashboard = (By.XPATH, "//a[normalize-space()='Dashboard']")
+    lbtn_Orders = (By.XPATH, "//a[normalize-space()='Orders']")
 
     def get_hello_text(self):
         return self.get_text(self.span_hello)
@@ -18,3 +20,6 @@ class MyAccountDetailedPage(BasePage):
 
         self.click(self.lbtn_SignOut)
         return LoginPage(self.driver)
+
+    def select_dashboard(self):
+        self.click(self.lbtn_Dashboard)
