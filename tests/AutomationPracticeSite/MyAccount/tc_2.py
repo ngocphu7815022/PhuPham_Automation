@@ -41,15 +41,13 @@ def test_select_left_menu(driver, username, password, has_orders):
             assert (
                 my_account_detailed_page.get_order_count() > 0
             ), "Expected at least one order row to be displayed."
-            assert not is_empty_message_displayed, (
-                "Did not expect the empty order message for an account with orders."
-            )
+            assert (
+                not is_empty_message_displayed
+            ), "Did not expect the empty order message for an account with orders."
         else:
-            assert is_empty_message_displayed, (
-                "Expected the empty order message to be displayed."
-            )
-            assert not is_order_table_displayed, (
-                "Did not expect the orders table for an account without orders."
-            )
-
-
+            assert (
+                is_empty_message_displayed
+            ), "Expected the empty order message to be displayed."
+            assert (
+                not is_order_table_displayed
+            ), "Did not expect the orders table for an account without orders."
