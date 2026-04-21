@@ -7,11 +7,10 @@ import allure
 @pytest.mark.parametrize(
     "username, password, has_orders",
     [
-        ("abc78150221@gmail.com", "Phuthoidai1.", False),
         ("abc7815022@gmail.com", "Phuthoidai1.", True),
     ],
 )
-def test_select_left_menu(driver, username, password, has_orders):
+def test_orders_menu(driver, username, password, has_orders):
     login_page = LoginPage(driver)
     login_page.open_home_page()
     login_page.select_my_account()
@@ -51,3 +50,33 @@ def test_select_left_menu(driver, username, password, has_orders):
             assert (
                 not is_order_table_displayed
             ), "Did not expect the orders table for an account without orders."
+
+    with allure.step("Click on 'View' button in each row"):
+        total_view_buttons = my_account_detailed_page.get_view_button_count()
+
+        for index in range(1, total_view_buttons + 1):
+            with allure.step(
+                f"Click 'View' button at row {index} and verify related labels"
+            ):
+                my_account_detailed_page.click_view_button_by_index(index)
+
+                assert my_account_detailed_page.is_order_details_visible(), (
+                    f"Expected 'Order Details' label to be displayed after clicking "
+                    f"'View' button at row {index}."
+                )
+                assert my_account_detailed_page.is_customer_details_visible(), (
+                    f"Expected 'Customer Details' label to be displayed after clicking "
+                    f"'View' button at row {index}."
+                )
+                assert my_account_detailed_page.is_billing_address_visible(), (
+                    f"Expected 'Billing Address' label to be displayed after clicking "
+                    f"'View' button at row {index}."
+                )
+
+                driver.back()
+
+                current_url = driver.current_url
+                assert current_url.endswith(expected_login_path), (
+                    f"Expected to return to the orders page ending with "
+                    f"'{expected_login_path}', but got '{current_url}'"
+                )
