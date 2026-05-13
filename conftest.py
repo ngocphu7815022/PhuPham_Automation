@@ -1,9 +1,26 @@
 import pytest
 import os
+import allure
 from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
+
+# Parameter names that should be masked in the Allure report.
+# Match is case-insensitive — add more keys here if needed (e.g., "otp", "pin").
+SENSITIVE_PARAMS = {"password", "pwd", "token", "api_key", "secret"}
+
+
+@pytest.hookimpl(hookwrapper=True)
+def pytest_runtest_call(item):
+    """Auto-mask sensitive parametrize values (e.g., password) in Allure report."""
+    if hasattr(item, "callspec"):
+        for name, value in item.callspec.params.items():
+            if name.lower() in SENSITIVE_PARAMS:
+                allure.dynamic.parameter(
+                    name, value, mode=allure.parameter_mode.MASKED
+                )
+    yield
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 SCREENSHOT_DIR = os.path.join(PROJECT_ROOT, "screenshots")

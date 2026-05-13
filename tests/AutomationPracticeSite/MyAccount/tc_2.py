@@ -3,7 +3,7 @@ from pages.AutomationPracticeSite.login_page import LoginPage
 from pages.AutomationPracticeSite.my_account_detailed_page import MyAccountDetailedPage
 import allure
 
-
+@allure.title("Login '{username}' when user {has_orders}_có_đơn_hàng → hiển thị left menu")
 @pytest.mark.parametrize(
     "username, password, has_orders",
     [

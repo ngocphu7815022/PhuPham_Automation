@@ -3,7 +3,7 @@ from pages.AutomationPracticeSite.login_page import LoginPage
 from pages.AutomationPracticeSite.my_account_detailed_page import MyAccountDetailedPage
 import allure
 
-
+@allure.title("Login '{username}'")
 @pytest.mark.parametrize(
     "username, password",
     [("abc7815022@gmail.com", "Phuthoidai1.")],
