@@ -5,9 +5,22 @@ import allure
 
 class MyAccountDetailedPage(BasePage):
     span_hello = (By.XPATH, "//p[contains(text(),'Hello')]")
+    lbtn_MyAccountTop = (By.XPATH, "//a[normalize-space()='My Account']")
     lbtn_SignOut = (By.XPATH, "//a[normalize-space()='Sign out']")
     lbtn_Dashboard = (By.XPATH, "//a[normalize-space()='Dashboard']")
     lbtn_Orders = (By.XPATH, "//a[normalize-space()='Orders']")
+    lbtn_Addresses = (By.XPATH, "//a[normalize-space()='Addresses']")
+    # Address page (sidebar Addresses)
+    lbl_addresses_billing = (By.XPATH, "//h3[normalize-space()='Billing Address']")
+    lbl_addresses_shipping = (By.XPATH, "//h3[normalize-space()='Shipping Address']")
+    box_addresses_billing = (
+        By.XPATH,
+        "//div[contains(@class,'u-column1')]//address",
+    )
+    box_addresses_shipping = (
+        By.XPATH,
+        "//div[contains(@class,'u-column2')]//address",
+    )
     tbl_Orders = (
         By.XPATH,
         "//table[@class='woocommerce-MyAccount-orders shop_table shop_table_responsive my_account_orders account-orders-table']",
@@ -40,6 +53,29 @@ class MyAccountDetailedPage(BasePage):
 
     def select_orders(self):
         self.click(self.lbtn_Orders)
+
+    @allure.step("Click on 'My Account' link on top menu (leads to Dashboard)")
+    def select_my_account_top(self):
+        self.click(self.lbtn_MyAccountTop)
+
+    @allure.step("Click on 'Addresses' link in sidebar")
+    def select_addresses(self):
+        self.click(self.lbtn_Addresses)
+
+    def is_logged_in(self):
+        return self.is_visible(self.span_hello)
+
+    def is_addresses_billing_displayed(self):
+        return self.is_visible(self.lbl_addresses_billing)
+
+    def is_addresses_shipping_displayed(self):
+        return self.is_visible(self.lbl_addresses_shipping)
+
+    def get_addresses_billing_text(self):
+        return self.get_text(self.box_addresses_billing)
+
+    def get_addresses_shipping_text(self):
+        return self.get_text(self.box_addresses_shipping)
 
     def is_order_table_displayed(self):
         return self.is_visible(self.tbl_Orders)
